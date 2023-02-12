@@ -26,12 +26,12 @@ class Account(db.Model):
     balance = db.Column(db.Numeric(19, 2))
 
 
-# class Transaction(db.Model):
-#     __tablename__ = "Transaction"
+class Transaction(db.Model):
+    __tablename__ = "Transaction"
 
-#     id = db.Column(db.Integer, primary_key=True)
-#     source_id = db.Column(db.Integer(), db.ForeignKey("Customer.id"))
-#     target_id = db.Column(db.Integer(), db.ForeignKey("Customer.id"))
-#     amount = db.Column(db.Numeric(19, 2))
-#     balance = db.Column(db.Numeric(19, 2))
-#     created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    id = db.Column(db.Integer, primary_key=True)
+    source_id = db.Column(db.Integer(), db.ForeignKey("Customer.id"))
+    target_id = db.Column(db.Integer(), db.ForeignKey("Customer.id"))
+    amount = db.Column(db.Numeric(19, 2))
+    balance = db.Column(db.Numeric(19, 2))
+    created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
